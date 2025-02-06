@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Akçiçek Yılmaz",
+    "age": 20,
+    "gender": "female",
+    "avgMark": 8.9,
+    "onDuty": false,
+    "createdAt": "2024-05-08T16:12:14.954151",
+    "updatedAt": "2024-05-08T16:12:14.954158"
+  },
+  {
+    "name": "yılmaz mor",
+    "age": 19,
+    "gender": "male",
+    "avgMark": 5.9,
+    "onDuty": true,
+    "createdAt": "2024-05-08T16:12:14.954151",
+    "updatedAt": "2024-05-08T16:12:14.954158"
+  },
+  {
+    "name": "sema dal",
+    "age": 26,
+    "gender": "female",
+    "avgMark": 6.5,
+    "onDuty": false,
+    "createdAt": "2024-05-08T16:12:14.954151",
+    "updatedAt": "2024-05-08T16:12:14.954158"
+  },
+  {
+    "name": "meral durmaz",
+    "age": 23,
+    "gender": "female",
+    "avgMark": 8.1,
+    "onDuty": true,
+    "createdAt": "2024-05-08T16:12:14.954151",
+    "updatedAt": "2024-05-08T16:12:14.954158"
+  }
+]
