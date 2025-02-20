@@ -1,4 +1,3 @@
-// src/db/models/student.js
 import { model, Schema } from 'mongoose';
 
 const studentsSchema = new Schema(
@@ -25,6 +24,14 @@ const studentsSchema = new Schema(
       required: true,
       default: false,
     },
+    parentId: { type: Schema.Types.ObjectId, ref: 'users' },
+  },
+  {
+    timestamps: true,
+    versionKey: false,
+  },
+  {
+    photo: { type: String },
   },
   {
     timestamps: true,

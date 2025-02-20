@@ -1,11 +1,14 @@
-import { getAllStudents, getStudentById } from '../services/students.js';
 import createHttpError from 'http-errors';
+import { getAllStudents, getStudentById } from '../services/students.js';
 import { createStudent } from '../services/students.js';
 import { deleteStudent } from '../services/students.js';
 import { updateStudent } from '../services/students.js';
 import { parsePaginationParams } from '../utils/parsePaginationParams.js';
 import { parseSortParams } from '../utils/parseSortParams.js';
 import { parseFilterParams } from '../utils/parseFilterParams.js';
+import { saveFileToUploadDir } from '../utils/saveFileToUploadDir.js';
+import { saveFileToCloudinary } from '../utils/saveFileToCloudinary.js';
+import { env } from '../utils/env.js';
 
 export const createStudentController = async (req, res) => {
   const student = await createStudent(req.body);
@@ -86,9 +89,26 @@ export const upsertStudentController = async (req, res, next) => {
   });
 };
 
+//
+
 export const patchStudentController = async (req, res, next) => {
   const { studentId } = req.params;
-  const result = await updateStudent(studentId, req.body);
+  const photo = req.file;
+
+  let photoUrl;
+
+  if (photo) {
+    if (env('ENABLE_CLOUDINARY') === 'true') {
+      photoUrl = await saveFileToCloudinary(photo);
+    } else {
+      photoUrl = await saveFileToUploadDir(photo);
+    }
+  }
+
+  const result = await updateStudent(studentId, {
+    ...req.body,
+    photo: photoUrl,
+  });
 
   if (!result) {
     next(createHttpError(404, 'Student not found'));
