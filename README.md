@@ -1,6 +1,6 @@
 Hello !
 
-This project includes information about pagination, sorting, filters, authentication and authorization, working with emails and images in Node.js. Creating user-friendly navigation between pages, setting up sorting configurations for correct sorting of results, and applying filters for precise selection of data. These tools can help you make your application more user-friendly and efficient.
+This project includes information about pagination, sorting, filters, authentication and authorization, working with emails and images in Node.js. and SwaggerDocs Creating user-friendly navigation between pages, setting up sorting configurations for correct sorting of results, and applying filters for precise selection of data. These tools can help you make your application more user-friendly and efficient.
 
 ROUTERS:
 
